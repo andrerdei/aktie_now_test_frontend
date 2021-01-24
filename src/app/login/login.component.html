@@ -1,0 +1,38 @@
+<form class="login-form">
+    <div class="login-form-top-div">
+        <h2>Aktie Now Test Library</h2>
+    </div>
+
+    <div class="login-form-middle-div">
+        <h3>Seja bem vindo!</h3>
+        <h4>Para continuar, digite seu usuário e senha</h4>
+    </div>
+    
+    <label for="email">
+    </label>
+    <input 
+        type="email" 
+        name="email"
+        placeholder="Usuário:"
+        [(ngModel)]="admin.email"
+        required
+    >
+    <label for="pwd">
+    </label>
+    <input
+        type="password"
+        id="pwd"
+        name="pwd"
+        placeholder="Senha:"
+        [(ngModel)]="admin.password"
+        required
+    >
+    <button
+        type="button"
+        (click)="doLogin()"
+    >
+    Entrar
+    </button>
+
+    <div class="login-form-bottom-div"></div>
+</form>

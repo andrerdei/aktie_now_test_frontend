@@ -1,0 +1,118 @@
+.collection-title{
+    color: rgb(95, 95, 98);
+    font-family: "Roboto";
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+}
+
+.register-update-form{
+    display: none;
+}
+
+.collection-list{
+    width: 50em;
+    height: 40em;
+    background-color: rgba(255,255,255,.5);
+    box-shadow: inset 0px 0px 3px .1px rgba(0,0,0,.4);
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.collection-list thead{
+    width: 100%;
+    height: 5em;
+    background-color: rgb(95, 95, 98);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 0px 3px .1px rgba(0,0,0,.4);
+    display: flex;
+}
+
+.collection-list thead tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.collection-list thead tr th{
+    width: 10%;
+    color: white;
+    font-family: "Roboto";
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px black;
+    letter-spacing: 3px;
+}
+
+.collection-list tbody{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.collection-list tbody tr{
+    width: 100%;
+    color: black;
+    padding: 1em 0 1em 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-bottom: 1px ridge lightgrey;
+}
+
+.collection-list tbody tr:last-child {
+    border-bottom: none;
+}
+
+.collection-list tbody tr td{
+    color: rgb(95, 95, 98);
+    font-family: "Roboto";
+    display: flex;
+    flex-direction: column;
+}
+
+.collection-list tbody tr button{
+    width: 100%;
+    height: 2em;
+    color: white;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    border: none;
+    border-radius: 5px;
+    margin: .5em 0 .5em 0;
+    cursor: pointer;
+}
+
+.collection-list tbody tr button:hover{
+    box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,.3);
+}
+
+.collection-list tbody tr .edit-button{
+    background-color: darkblue;
+}
+
+.collection-list tbody tr .delete-button{
+    background-color: rgb(170, 58, 18);
+
+}
+
+.collection-list-pagination-div {
+    display: flex;
+    justify-content: center;
+}
+
+.collection-list-pagination-div {
+    display: flex;
+    justify-content: center;
+}
+
+.collection-list-pagination {
+    margin-top: 15px;
+    margin-left: -40px;
+}
