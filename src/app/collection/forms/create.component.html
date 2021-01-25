@@ -1,0 +1,35 @@
+<form class="register-update-form">
+    <label for="title">
+        Title:
+    </label> 
+    <input 
+        type="text" 
+        name="title" 
+        required 
+        [(ngModel)]="book.title"
+    >
+    <label for="genre">
+        Genre:
+    </label>
+    <input 
+        type="text" 
+        name="genre" 
+        required
+        [(ngModel)]="book.genre"
+    >
+    <label for="description">
+        Description:
+    </label>      
+    <input 
+        type="text" 
+        name="description"
+        required
+        [(ngModel)]="book.description"
+    >
+    <button
+        type="button"
+        (click)="registerBook()"
+    >
+    Cadastrar
+    </button>
+</form>

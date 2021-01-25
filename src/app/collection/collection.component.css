@@ -64,6 +64,16 @@
     border-bottom: 1px ridge lightgrey;
 }
 
+.collection-list tbody tr .create-button{
+    width: 10%;
+    background-color: black;
+    padding: 1em 0 1em 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-bottom: 1px ridge lightgrey;
+}
+
 .collection-list tbody tr:last-child {
     border-bottom: none;
 }
