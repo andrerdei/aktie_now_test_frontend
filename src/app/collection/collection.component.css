@@ -1,4 +1,4 @@
-.collection-title{
+.collection-title {
     color: rgb(95, 95, 98);
     font-family: "Roboto";
     font-weight: bold;
@@ -7,11 +7,92 @@
     margin-bottom: 1em;
 }
 
-.register-update-form{
+.register-update-form-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    opacity: 0;
+}
+
+.register-update-form {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.visible-form-index {
+    z-index: 100;
+}
+
+.visible-form-opacity {
+    opacity: 1;
+    transition: .8s ease-in-out;
+}
+
+.register-update-form img {
+    width: 20em;
+}
+
+.register-update-form input {
+    width: 60%;
+    height: 2em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(95, 95, 98);
+    margin-top: 2em;
+}
+    
+.register-update-form input {
+    outline: none;
+}
+
+.register-update-form button {
+    width: 60%;
+    height: 3em;
+    background-color: rgb(95, 95, 98);
+    color: white;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+.register-update-form .real-create-button,
+.register-update-form .real-edit-button {
+    background-color: darkblue;
+    margin-top: 2em;
+    margin-bottom: 0;
     display: none;
 }
 
-.collection-list{
+.register-update-form .cancel-create-button,
+.register-update-form .cancel-edit-button {
+    background-color: rgb(170, 58, 18);
+    margin-top: -.5em;
+    display: none;
+}
+
+.register-update-form .visible-button {
+    display: block;
+}
+
+.collection-list {
     width: 50em;
     height: 40em;
     background-color: rgba(255,255,255,.5);
@@ -21,7 +102,7 @@
     flex-direction: column;
 }
 
-.collection-list thead{
+.collection-list thead {
     width: 100%;
     height: 5em;
     background-color: rgb(95, 95, 98);
@@ -30,15 +111,13 @@
     display: flex;
 }
 
-.collection-list thead tr{
+.collection-list thead tr {
     width: 100%;
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 
-.collection-list thead tr th{
-    width: 10%;
+.collection-list thead tr th {
     color: white;
     font-family: "Roboto";
     text-align: center;
@@ -47,14 +126,34 @@
     letter-spacing: 3px;
 }
 
-.collection-list tbody{
+.collection-list thead tr .title-wraper {
+    width: 20%;
+}
+
+.collection-list thead tr .genre-wraper {
+    width: 20%;
+}
+
+.collection-list thead tr .description-wraper {
+    width: 40%;
+}
+
+.collection-list thead tr .actions-wraper {
+    width: 20%;
+}
+
+.collection-list thead tr th .description-paragraph {
+    margin-left: -3em;
+}
+
+.collection-list tbody {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.collection-list tbody tr{
+.collection-list tbody tr {
     width: 100%;
     color: black;
     padding: 1em 0 1em 0;
@@ -64,29 +163,48 @@
     border-bottom: 1px ridge lightgrey;
 }
 
-.collection-list tbody tr .create-button{
-    width: 10%;
-    background-color: black;
-    padding: 1em 0 1em 0;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    border-bottom: 1px ridge lightgrey;
-}
-
-.collection-list tbody tr:last-child {
-    border-bottom: none;
-}
-
-.collection-list tbody tr td{
+.collection-list tbody tr td {
     color: rgb(95, 95, 98);
     font-family: "Roboto";
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: .5em;
 }
 
-.collection-list tbody tr button{
+.collection-list tbody tr .title-wraper {
+    width: 20%;
+}
+
+.collection-list tbody tr .genre-wraper {
+    width: 20%;
+}
+
+.collection-list tbody tr .description-wraper {
+    width: 40%;
+}
+
+.collection-list tbody tr .actions-wraper {
+    width: 20%;  
+}
+
+.collection-list tbody tr td p {
     width: 100%;
+    text-align: center;
+}
+
+.collection-list tbody tr td p::first-letter {
+    text-transform: uppercase;
+}
+
+.collection-list tbody tr td .description-paragraph {
+    text-align: left;
+}
+
+.collection-list tbody tr button {
+    width: 40%;
     height: 2em;
     color: white;
     font-family: "Roboto";
@@ -99,17 +217,45 @@
     cursor: pointer;
 }
 
-.collection-list tbody tr button:hover{
+.collection-list tbody tr button:hover {
     box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,.3);
 }
 
-.collection-list tbody tr .edit-button{
+.collection-list tbody tr .edit-button {
     background-color: darkblue;
 }
 
-.collection-list tbody tr .delete-button{
+.collection-list tbody tr .delete-button {
     background-color: rgb(170, 58, 18);
 
+}
+
+tfoot {
+    height: 100%;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: .6em;
+}
+
+tfoot .create-button {
+    width: 30%;
+    height: 3em;
+    background-color: rgb(95, 95, 98);
+    color: white;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+tfoot .create-button:hover{
+    box-shadow: inset 1px 1px 5px 2px rgba(0,0,0,.4);
 }
 
 .collection-list-pagination-div {

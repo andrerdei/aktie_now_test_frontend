@@ -5,9 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CollectionComponent } from './collection.component';
 import { CollectionService } from './services/collection.service';
+import { CollectionModalService } from './services/collection-modal.service';
 
 @NgModule({
-  declarations: [CollectionComponent],
+  declarations: [
+    CollectionComponent
+  ],
 
   imports: [
     CommonModule,
@@ -19,7 +22,8 @@ import { CollectionService } from './services/collection.service';
 
   providers: [
     HttpClientModule,
-    CollectionService
+    CollectionService,
+    CollectionModalService
   ]
 })
 

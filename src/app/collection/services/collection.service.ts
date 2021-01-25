@@ -9,8 +9,8 @@ import { environment } from '../../../environments/environment'
 })
 export class CollectionService {
 
-  accessToken: string = localStorage.getItem('accessToken');
-  httpHeaders = new HttpHeaders({
+  private accessToken: string = localStorage.getItem('accessToken');
+  private httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
     'Authorization': this.accessToken
   });

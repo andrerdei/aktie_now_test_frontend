@@ -1,54 +1,122 @@
-<div>
-    <h2 class="collection-title">
-        Lista de livros
-    </h2>
+<h2 class="collection-title">
+    Lista de livros
+</h2>
 
-    <button
-        class="create-button"
-        type="button" 
-        (click)="registerBook()"
-    >
-    </button>
+<div class="register-update-form-div">
+    <form class="register-update-form">
+        <img
+            class="application-header-logo"
+            src="../../assets/images/logo_aktie_now.png" 
+            alt="Logo da empresa"
+        >
+        <input 
+            type="text" 
+            name="title"
+            maxlength="25"
+            placeholder="Título:"
+            required 
+            [(ngModel)]="book.title"
+        >
+        <input 
+            type="text" 
+            name="genre"
+            maxlength="20"
+            placeholder="Gênero:"
+            required
+            [(ngModel)]="book.genre"
+        >
+        <input
+            type="text" 
+            name="description"
+            maxlength="70"
+            placeholder="Descrição:"
+            required
+            [(ngModel)]="book.description"
+        >
+        <button
+            class="real-create-button"
+            type="button"
+            (click)="registerBook()"
+            (click)="toggleCreateModal()"
+        >
+        Salvar
+        </button>
+        <button
+            class="cancel-create-button"
+            type="button"
+            (click)="toggleCreateModal()"
+        >
+        Cancelar
+        </button>
+        <button
+            class="real-edit-button"
+            type="button"
+            (click)="editBook(currentBookId)"
+            (click)="toggleEditModal()"
+        >
+        Salvar
+        </button>
+        <button
+            class="cancel-edit-button"
+            type="button"
+            (click)="toggleEditModal()"
+        >
+        Cancelar
+        </button>
+    </form>
 </div>
-
-
 
 <table class="collection-list">
     <thead>
         <tr>
-            <th>
-                <p>Título</p>
+            <th class="title-wraper">
+                <p>
+                    Título
+                </p>
             </th>
-            <th>
-                <p>Gênero</p>
+            <th class="genre-wraper">
+                <p>
+                    Gênero
+                </p>
             </th>
-            <th>
-                <p>Descrição</p>
+            <th class="description-wraper">
+                <p class="description-paragraph">
+                    Descrição
+                </p>
             </th>
-            <th>
-                <p>Ações</p>
+            <th class="actions-wraper">
+                <p>
+                    Ações
+                </p>
             </th>
         </tr>
     </thead>
 
     <tbody>
         <tr *ngFor="let book of collection.list | paginate: { id: 'listing_pagination',
-            itemsPerPage: 5, currentPage: currentPage, totalItems: totalRecords }"
+            itemsPerPage: 4, currentPage: currentPage, totalItems: totalRecords }"
         >
-            <td>
-                <p>{{ book.title }}</p>
+            <td class="title-wraper">
+                <p>
+                    {{ book.title }}
+                </p>
             </td>
-            <td>
-                <p>{{ book.genre }}</p>
+            <td class="genre-wraper">
+                <p>
+                    {{ book.genre }}
+                </p>
             </td>
-            <td>
-                <p>{{ book.description }}</p>
+            <td class="description-wraper">
+                <p class="description-paragraph">
+                    {{ book.description }}
+                </p>
             </td>
-            <td>
+            <td class="actions-wraper">
                 <button 
                     class="edit-button"
                     type="button" 
-                    (click)="editBook(book._id)"
+                    (click)="getCurrentBookId(book._id)"
+                    (click)="toggleEditModal()"
                 >
                 Editar
                 </button>
@@ -62,6 +130,16 @@
             </td>
         </tr>
     </tbody>
+
+    <tfoot>
+        <button
+        class="create-button"
+        type="button" 
+        (click)="toggleCreateModal()"
+        >
+        Cadastrar novo livro
+        </button>
+    </tfoot>
 </table>
 
 <div class="collection-list-pagination-div">

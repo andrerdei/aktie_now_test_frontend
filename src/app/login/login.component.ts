@@ -10,7 +10,7 @@ import { LoginService } from './services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  admin: AdminModel = new AdminModel();
+  public admin: AdminModel = new AdminModel();
 
   constructor(
     private loginService: LoginService,
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public doLogin() {
+  public doLogin(): void {
     this.loginService.doLogin(this.admin).subscribe(
       (adminData) => {
         const accessToken = adminData.token
